@@ -22,9 +22,10 @@ class Solution {
         if(root==null) return 0;
 
         int count=0;
-        if(root.val >= max) count=1;
-
-        max = Math.max(max, root.val);
+        if(root.val >= max){
+            count++;
+            max = Math.max(max, root.val);
+        }
 
         count = count + countGoodNodes(root.left, max);
         count = count + countGoodNodes(root.right, max);
