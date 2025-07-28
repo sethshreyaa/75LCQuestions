@@ -7,6 +7,11 @@ class Solution {
         while(left<=right){
             int mid = (left+right)/2;
 
+            if(nums[left]<=nums[right]){
+                min = Math.min(min, nums[left]);
+                break;
+            }
+
             if(nums[mid]>=nums[left]){
                 min = Math.min(min, nums[left]);
                 left=mid+1;
